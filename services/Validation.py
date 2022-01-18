@@ -1,6 +1,6 @@
 import re
 class Validation:
-    def __init__(self) -> None:
+    def __init__(self):
         pass  
     
     def validString(self,obj,minLength=3,maxLength=6): 
@@ -36,4 +36,4 @@ class Validation:
 
 validation=Validation()
 # validation=Validation()
-print(validation.validString("ff g",6,9))
+# print(validation.validString("ff g",6,9))
