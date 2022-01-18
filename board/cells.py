@@ -1,18 +1,21 @@
 from services.Player import *
 from services.Screen import *
 class Cells:
+      def __init__(self):
+         self.myBoard =list() 
+         self.row =list()    
       #function to create list of rows
       def makeList(self,min,max,rowsNum):
            #initialize variables
            self.myBoard =list() 
            self.row =list() 
-           self.__rowsNum =rowsNum
-           self.__min=min
-           self.__max=max
+           self._rowsNum =rowsNum
+           self._min=min
+           self._max=max
            
-           for cell in range( self.__min,self.__max+1):
+           for cell in range( self._min,self._max+1):
                   self.row.append(cell)
-                  if cell%self.__rowsNum==0:
+                  if cell%self._rowsNum==0:
                         self.myBoard.append(self.row)
                         self.row=list()
            return self.myBoard 
@@ -20,26 +23,55 @@ class Cells:
       def drawBoard(self):
             # _____   _____   _____   _____   _____   _____
           for row in self.myBoard:
+                
+            # if self.myBoard[1]==row:
+            #    s=('''            
+            #                   |     | |     | |     | |     | |     | |     |
+            #                   |  {:2s}  | |  {:2s}  | |  {:2s}  | |  {:2s} | |  {:2s} | |  {:2s} |
+            #                   |_____| |_____| |_____| |_____| |_____| |_____|
+            #                   '''.format(str(row[0]),str(row[1]),str(row[2]),str(row[3]),str(row[4]),str(row[5]),))
+            # elif self.myBoard[0]==row:
+            #        s=('''            
+            #                   |     | |     | |     | |     | |     | |     |
+            #                   |  {:2s}  | |  {:2s}  | |  {:2s}  | |  {:2s}  | |  {:2s}  | |  {:2s}  |
+            #                   |_____| |_____| |_____| |_____| |_____| |_____|
+            #                   '''.format(str(row[0]),str(row[1]),str(row[2]),str(row[3]),str(row[4]),str(row[5]),))
+            # else:
+            #       s=('''            
+            #                   |     | |     | |     | |     | |     | |     |
+            #                   |  {:2s} | |  {:2s} | |  {:2s} | |  {:2s} | |  {:2s} | |  {:2s} |
+            #                   |_____| |_____| |_____| |_____| |_____| |_____|
             s=('''            
-                  |     | |     | |     | |     | |     | |     |
-                  | %02s  | | %02s  | | %02s  | |  %02s | |  %02s | |  %02s | 
-                  |_____| |_____| |_____| |_____| |_____| |_____|
-                  '''%(row[0],row[1],row[2],row[3],row[4],row[5]))
+                  
+                     {:2s}    {:2s}    {:2s}    {:2s}    {:2s}    {:2s}
+                  
+                  '''.format(str(row[0]),str(row[1]),str(row[2]),str(row[3]),str(row[4]),str(row[5]),))
+                                     
+                       
+            
+            
+            # s=('''            
+            #       |     | |     | |     | |     | |     | |     |
+            #       |  {:2s}  | |  {:2s}  | |  {:2s}  | |  {:2s}  | |  {:2s}  | |  {:2s}  |
+            #       |_____| |_____| |_____| |_____| |_____| |_____|
+            #       '''.format(str(row[0]),str(row[1]),str(row[2]),str(row[3]),str(row[4]),str(row[5]),))
+            # s=('''            
+            #        |              | |              | |              | |              | |              | |              |
+            #       ''')
+            # s+=" |{0:^5}| |{1:^5}| |{2:^5}| |{3:^5} |{4:^5}| |{5:^5}|".format(str(row[0]),str(row[1]),str(row[2]),str(row[3]),str(row[4]),str(row[5]))   
+            # s+=('''|______________| |______________| |______________| |______________| |______________| |______________| 
+            #       ''')
             print(s,end="")
 
       def changePlayersPosition(self,p1=Player(""),p2=Player("")):
-      #     print(self.myBoard)
+          clear(0)
+          self.makeList(self._min,self._max,self._rowsNum)
           self.myBoard[int(p1.score/6)][int(p1.score%6-1)]="p1"
           self.myBoard[int(p2.score/6)][int(p2.score%6-1)]="p2"
           
-          for row in self.myBoard:
-                for cell in row:
-                      if str(cell)==str(p1.score):
-                            cell=p1.name
-          Screen.clear(1)      
+          clear(0)      
           self.drawBoard()
-      #     print(self.myBoard)
-            
+      
 
 cells=Cells()
 # cells.makeList(1,31,6)

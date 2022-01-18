@@ -5,6 +5,8 @@ class Player():
     # self.__score=0
     # def __init__(self):
     #     pass 
+    def __init__(self) :
+        pass
     
     def __init__(self,name) :
         self.__score=0
@@ -23,17 +25,17 @@ class Player():
     
     @score.setter
     def score(self,score):
-        # new=score+self.__score
+        self.__score=score
+        
+    def addScore(self,score):
+        new=score+self.__score
         # print(score)
         # print(self.__score)
         # self.score=new
-        # if new>100:
-        #     self.__score=100
-        # else:
-        self.__score+=score
-        
-    def addScore(self,score):
-        self.__score+=score         
+        if new>30:
+            self.__score=30
+        else:
+            self.__score+=score        
      
         
             
