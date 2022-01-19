@@ -19,8 +19,6 @@ def splash():
             Loading . . .
           ''')
     clear(2)
-
-
 def start():
     global player1
     global player2
@@ -58,7 +56,7 @@ def start():
         
         player1.addScore(score1)
         player2.addScore(score2)
-        sleep(2)
+        sleep(1)
         
         # print("1,2",player1.score,player2.score)
         
@@ -81,6 +79,8 @@ def start():
                   '''%player2.name)
             break
         
+        game.changePlayersPosition(player1,player2)
+    
            
 def end():
     clear(2)
