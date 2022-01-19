@@ -1,7 +1,9 @@
 from services.Validation import *
 
 class Player():
-    
+    '''
+        Player class to mange Player of Game\n
+    '''
     # self.__score=0
     # def __init__(self):
     #     pass 
@@ -9,8 +11,16 @@ class Player():
         pass
     
     def __init__(self,name) :
+        '''
+            constractor take name=> args\n
+            it initialise name with name arg\n
+            return no value\n
+
+         '''
         self.__score=0
         self.__name=name
+    
+    
     @property
     def name(self):
         return self.__name
@@ -27,17 +37,20 @@ class Player():
         self.__score=score
         
     def addScore(self,score):
+        '''
+            addScore take score => number of player \n
+            it add to score \n
+            return no args \n
+        '''
         new=score+self.__score
-        # print(score)
-        # print(self.__score)
-        # self.score=new
+        
+        #check if bigger 30 
         if new>30:
             self.__score=30
         else:
             self.__score=new        
      
-        
-            
+           
     def __del__(self):
         del self
         

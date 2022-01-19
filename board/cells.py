@@ -1,18 +1,33 @@
 from services.Player import *
 from services.Screen import *
 class Cells:
+      '''
+            Cells class to mange cells of board\n
+           
+      '''
       def __init__(self):
+         '''
+            constractor take no args\n
+            it initialise cells list\n
+            return no value\n
+
+         '''
          self.myBoard =list() 
          self.row =list()    
       #function to create list of rows
       def makeList(self,min,max,rowsNum):
+           '''
+                  makeList take min => start number of cells and max => end number of cells \n
+                  it build cells board list\n
+                  return cells list\n
+           '''
            #initialize variables
            self.myBoard =list() 
            self.row =list() 
            self._rowsNum =rowsNum
            self._min=min
            self._max=max
-           
+           # loops throw rows in cells and create it
            for cell in range( self._min,self._max+1):
                   self.row.append(cell)
                   if cell%self._rowsNum==0:
@@ -21,6 +36,11 @@ class Cells:
            return self.myBoard 
      
       def drawBoard(self):
+          '''
+                  makedrawBoard take no Args \n
+                  it draw  board using cell list\n
+                  return cells list\n
+           '''
             # _____   _____   _____   _____   _____   _____
           for row in self.myBoard:
                 
@@ -63,18 +83,10 @@ class Cells:
             
           print("\n")
 
-      def changePlayersPosition(self,p1=Player(""),p2=Player("")):
-      #     clear(0)
-      #     self.makeList(self._min,self._max,self._rowsNum)
-      #     self.myBoard[int(p1.score/6)][int(p1.score%6-1)]=p1.name
-      #     self.myBoard[int(p2.score/6)][int(p2.score%6-1)]=p2.name
-          
-      #     clear(0)      
-      #     self.drawBoard()
-      #     print(p1.name," score is ",p1.score)
-      #     print(p2.name," score is ",p2.score)
+      def changePlayersPosition(self,p1,p2):
+            #abstract method will implemets in child
             pass
-cells=Cells()
+game=Cells()
 # cells.makeList(1,31,6)
 # cells.drawBoard()
 

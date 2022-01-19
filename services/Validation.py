@@ -1,5 +1,8 @@
 import re
 class Validation:
+    '''
+        Validation class to Validate  var\n
+    '''
     def __init__(self):
         pass  
     

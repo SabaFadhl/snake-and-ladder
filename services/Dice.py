@@ -2,9 +2,19 @@ import keyboard
 from random import randint
 
 class Dice:
+    '''
+            Dice class to mange Dice of Game\n
+    '''
     def __init__(self) :
+        '''
+            constractor take no args\n
+            it initialise min and max\n
+            return no value\n
+
+         '''
         self.__min=int(1)
         self.__max=int(6)
+        
     @property
     def min(self):
         return self.__min
@@ -21,11 +31,17 @@ class Dice:
         self.__max=max
                 
     def roll(self,name):
-        
+        '''
+            roll take name => name of player \n
+            it roll up random dice \n
+            return no=>number \n
+        '''
         print("%s press any key to roll : "%name)
         # keyboard.read_key()
         input()
+        #Generate random number beteen[min,max]
         no = randint(self.min,self.max)
+        #draw Dices
         if no == 1:
             print(" _____")
             print("|     |")
