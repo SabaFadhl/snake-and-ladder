@@ -16,8 +16,7 @@ class Player():
         return self.__name
     @name.setter
     def name(self,name):
-        if  validation.validString(name,3,10):
-            self.__name=name
+        self.__name=name
             
     @property
     def score(self):
@@ -35,7 +34,7 @@ class Player():
         if new>30:
             self.__score=30
         else:
-            self.__score+=score        
+            self.__score=new        
      
         
             
@@ -44,7 +43,7 @@ class Player():
         
         
     
-player=Player("saba")
-player.score=6
+# player=Player("saba")
+# player.score=6
 # player.addScore(4)
-print(player.score)
+# print(player.score)

@@ -30,6 +30,9 @@ def ladder():
     sleep(1)
     os.system('color 7')
 
+def splashColor():
+    os.system('color d')
+
 # screen=Screen()
 # screen.snake()
 # print(len(ladderNum(3)))

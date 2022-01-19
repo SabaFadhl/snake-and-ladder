@@ -20,11 +20,11 @@ class Dice:
     def max(self,min):
         self.__max=max
                 
-    def roll(self):
+    def roll(self,name):
         
-        print("press any key to roll :")
-        keyboard.read_key()
-        
+        print("%s press any key to roll : "%name)
+        # keyboard.read_key()
+        input()
         no = randint(self.min,self.max)
         if no == 1:
             print(" _____")
@@ -62,12 +62,13 @@ class Dice:
             print("| 0 0 |")
             print("| 0 0 |")
             print("|_____|")
-            
+       
+        # keyboard.remove_all_hotkeys
         return no
 
 
 
 
-dice=Dice()
+
 # a=dice.roll()  
 # print(a) 

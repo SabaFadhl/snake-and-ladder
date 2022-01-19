@@ -42,10 +42,8 @@ class Cells:
             #                   |  {:2s} | |  {:2s} | |  {:2s} | |  {:2s} | |  {:2s} | |  {:2s} |
             #                   |_____| |_____| |_____| |_____| |_____| |_____|
             s=('''            
-                  
                      {:2s}    {:2s}    {:2s}    {:2s}    {:2s}    {:2s}
-                  
-                  '''.format(str(row[0]),str(row[1]),str(row[2]),str(row[3]),str(row[4]),str(row[5]),))
+                  '''.format(str(row[0]),str(row[1]),str(row[2]),str(row[3]),str(row[4]),str(row[5])))
                                      
                        
             
@@ -62,17 +60,20 @@ class Cells:
             # s+=('''|______________| |______________| |______________| |______________| |______________| |______________| 
             #       ''')
             print(s,end="")
+            
+          print("\n")
 
       def changePlayersPosition(self,p1=Player(""),p2=Player("")):
-          clear(0)
-          self.makeList(self._min,self._max,self._rowsNum)
-          self.myBoard[int(p1.score/6)][int(p1.score%6-1)]="p1"
-          self.myBoard[int(p2.score/6)][int(p2.score%6-1)]="p2"
+      #     clear(0)
+      #     self.makeList(self._min,self._max,self._rowsNum)
+      #     self.myBoard[int(p1.score/6)][int(p1.score%6-1)]=p1.name
+      #     self.myBoard[int(p2.score/6)][int(p2.score%6-1)]=p2.name
           
-          clear(0)      
-          self.drawBoard()
-      
-
+      #     clear(0)      
+      #     self.drawBoard()
+      #     print(p1.name," score is ",p1.score)
+      #     print(p2.name," score is ",p2.score)
+            pass
 cells=Cells()
 # cells.makeList(1,31,6)
 # cells.drawBoard()
